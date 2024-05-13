@@ -1,0 +1,31 @@
+﻿<Window x:Class="Video_App.videoclient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video_App"
+        mc:Ignorable="d"
+        Title="" x:Name="vid" WindowState="Maximized" Background="#1f1f1f" Icon="unknown_2.ico">
+    <Window.Resources>
+        <Style x:Key="NoHighlightButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <MediaElement x:Name="vido" LoadedBehavior="Manual" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="" Width="1920" Height="1080" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" Background="Transparent" Foreground="White" BorderBrush="Transparent" BorderThickness="0" Style="{StaticResource NoHighlightButtonStyle}"/>
+        <Slider VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="volum" Margin="10" Visibility="Visible" Value="0.3" ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="1" SmallChange="0.1" Width="140" Height="30" />
+    </Grid>
+</Window>

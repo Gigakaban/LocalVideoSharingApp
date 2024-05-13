@@ -1,0 +1,42 @@
+﻿<Window x:Class="Video_App.video"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video_App"
+        mc:Ignorable="d"
+        Title="" WindowState="Maximized" Background="#1f1f1f" x:Name="vid" Icon="unknown_2.ico">
+    <Window.Resources>
+        <Style x:Key="NoHighlightButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <MediaElement  Source="" x:Name="vido" LoadedBehavior="Manual" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="" Width="1920" Height="1080" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" Background="Transparent" Foreground="White" BorderBrush="Transparent" BorderThickness="0" Style="{StaticResource NoHighlightButtonStyle}"/>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="lessvid" Content="  ↶  " Margin="10" Visibility="Hidden" Click="Minus10second_Click" Style="{StaticResource NoHighlightButtonStyle}" FontSize="22"/>
+            <Button x:Name="pause" Content="  ⏯  " Margin="10" Visibility="Hidden" Click="Pause_Click" Grid.Column="1" Style="{StaticResource NoHighlightButtonStyle}" FontSize="22"/>
+            <Button x:Name="incrvid" Content="  ↷  " Margin="10" Visibility="Hidden" Click="Plus10second_Click" Grid.Column="2" Style="{StaticResource NoHighlightButtonStyle}" FontSize="22"/>
+            <Slider x:Name="volum" Margin="10" Visibility="Hidden" Value="0.3" ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="1" SmallChange="0.1" Grid.Column="3" Width="140" Height="30"/>
+        </Grid>
+    </Grid>
+</Window>

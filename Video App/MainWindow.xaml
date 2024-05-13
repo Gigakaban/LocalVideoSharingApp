@@ -1,0 +1,24 @@
+﻿<Window x:Class="Video_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video_App"
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        mc:Ignorable="d"
+        Title="Video App" Height="270" Width="400" x:Name="mwindow" Icon="unknown_2.ico">
+    <Grid>
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="33,159,0,0" VerticalAlignment="Top" Click="ConnectButton_CLick" Height="28" Width="48" />
+        <Button Content="Host" HorizontalAlignment="Left" Height="31" Margin="33,31,0,0" VerticalAlignment="Top" Width="48" Click="HostButton_Click"/>
+        <TextBox x:Name="ServerIpTextBox" HorizontalAlignment="Left" Height="20" Margin="111,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" />
+        <TextBox x:Name="ServerPortTextBox" HorizontalAlignment="Left" Margin="111,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172"/>
+        <Label Content="Port" HorizontalAlignment="Center" Height="24" Margin="0,166,0,0" VerticalAlignment="Top" Width="190" FontSize="10"/>
+        <Label Content="Ip for server create" HorizontalAlignment="Left" Height="27" Margin="108,10,0,0" VerticalAlignment="Top" Width="190" FontSize="10"/>
+        <Image x:Name="lgif" HorizontalAlignment="Left" gif:AnimationBehavior.SourceUri="pack://application:,,,/kokakola/ZKZg.gif" Height="53" Margin="314,65,0,0" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
+        <Label x:Name="lstatus" Content="Очікуємо підключення ..." HorizontalAlignment="Left" Height="26" Margin="111,79,0,0" VerticalAlignment="Top" Width="187" Visibility="Hidden" />
+        <ComboBox x:Name="cboxip" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" Width="172" Height="20"/>
+        <Label Content="Ip for connect to server" HorizontalAlignment="Center" Height="24" Margin="0,117,0,0" VerticalAlignment="Top" Width="190" FontSize="10"/>
+
+
+    </Grid>
+</Window>
